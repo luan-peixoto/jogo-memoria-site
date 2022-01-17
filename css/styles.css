@@ -246,6 +246,8 @@ a, a:hover {
 
 }
 
+/* girar o cartão */ 
+
 .card-round-container {
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -264,3 +266,27 @@ a, a:hover {
     transform: rotateY(180deg);
 }
 
+/* modal começar o jogo */
+
+.modal-jogo {
+    display: block;
+    z-index: 1055;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 21, 27);
+}
+
+.modal-jogo-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    height: 400px;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
+    background-color: white;
+}

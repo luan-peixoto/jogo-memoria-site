@@ -26,10 +26,45 @@
 
     <!--navbar principal-->
     <nav class="navbar navbar-light">
-        <button type="button" onclick="comecarJogo(4)">começar</button>
+        <button type="button" onclick="iniciarTabuleiro(4)">começar</button>
 
-        
+
     </nav>
+
+    <!--modal do jogo-->
+    <div class="modal-jogo">
+        <div class="modal-jogo-content">
+
+            <form action="" method="POST">
+                <input class="btn-check" type="radio" id="jogadores_1" name="qtd_jogadores" value="1">
+                <label class="btn btn-secondary" for="jogadores_1">1</label>
+
+                <input class="btn-check" type="radio" id="jogadores_2" name="qtd_jogadores" value="2">
+                <label class="btn btn-secondary" for="jogadores_2">2</label>
+
+                <input class="btn-check" type="radio" id="jogadores_3" name="qtd_jogadores" value="3">
+                <label class="btn btn-secondary" for="jogadores_3">3</label>
+
+                <input class="btn-check" type="radio" id="jogadores_4" name="qtd_jogadores" value="4">
+                <label class="btn btn-secondary" for="jogadores_4">4</label>
+
+                <br><br>
+
+                <input class="btn-check" type="radio" id="tamanho_1" name="tamanho_tabuleiro" value="4">
+                <label class="btn btn-secondary" for="tamanho_1">4x4</label>
+
+                <input class="btn-check" type="radio" id="tamanho_2" name="tamanho_tabuleiro" value="6">
+                <label class="btn btn-secondary" for="tamanho_2">6x6</label>
+
+                <br><br>
+
+                <button type="button" onclick="iniciarJogo()" class="btn btn-sm btn-danger btn-remover">
+                    Começar
+                </button>
+            </form>
+
+        </div>
+    </div>
 
     <!--campo dos cartões-->
     <div class="container">
@@ -123,7 +158,7 @@
                 </a>
             </div>
         </div>
-    </div>  
+    </div>
 
 
 
@@ -132,15 +167,15 @@
 
 
 
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a href="#">Luan Peixoto Jardim</a>.
-        </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Luan Peixoto Jardim</a>.
+    </div>
 
 
-        <script src="js/jquery-3.6.0.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
-        <script src="js/script.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -39,14 +39,14 @@ var icons = [
 
 
 
-function comecarJogo(tamanho_jogo) {
-    tamanho_jogo = parseInt(tamanho_jogo)
+function iniciarTabuleiro(tamanho_tabuleiro) {
+    tamanho_tabuleiro = parseInt(tamanho_tabuleiro)
 
     icons = embaralharCartoes(icons);
     // embaralha os icones para que em cada jogo se use icons diferentes
 
     tabuleiro = [];
-    for (let i = 0 ; i < tamanho_jogo * tamanho_jogo / 2; i++) {
+    for (let i = 0 ; i < tamanho_tabuleiro * tamanho_tabuleiro / 2; i++) {
         tabuleiro.push(icons[i], icons[i]);
         console.log(i)
     };
@@ -56,10 +56,10 @@ function comecarJogo(tamanho_jogo) {
     let div = ""
     // cria a div que vai começar o jogo
 
-    for (let i = 0 ; i < tamanho_jogo; i++) {
+    for (let i = 0 ; i < tamanho_tabuleiro; i++) {
         let col = ""
-        for (let j = i * tamanho_jogo ; j < (tamanho_jogo * (i+1)); j++) {
-            let cartao = `<a id="card_${j}" class="d-inline-block" type="button" onclick=""><div class="card-round-${tamanho_jogo}x" onclick=""><i class="card-round-${tamanho_jogo}x-icon ${tabuleiro[j]} fa-responsive-size-${tamanho_jogo}x"></i></div></a>`
+        for (let j = i * tamanho_tabuleiro ; j < (tamanho_tabuleiro * (i+1)); j++) {
+            let cartao = `<a id="card_${j}" class="d-inline-block" type="button" onclick=""><div class="card-round-${tamanho_tabuleiro}x" onclick=""><i class="card-round-${tamanho_tabuleiro}x-icon ${tabuleiro[j]} fa-responsive-size-${tamanho_tabuleiro}x"></i></div></a>`
             col = col + cartao
         };
         col = `<div class="m-2 text-center col-12">${col}</div>`
@@ -101,3 +101,25 @@ function flipTeste(id) {
     },2000)
     // pra remover a cor laranja caso precise
 };
+
+
+function iniciarJogo() { 
+    let jogadores = document.querySelector('input[name="qtd_jogadores"]:checked');
+    // recupera o input com name 'qtd_jogadores' que está checked.
+
+    let tabuleiro = document.querySelector('input[name="tamanho_tabuleiro"]:checked');
+    // recupera o input com name 'tamanho_tabuleiro' que está checked.
+      
+    if(jogadores != null && tabuleiro != null) {
+        // se ambos os inputs estão checked
+        qtd_jogadores = jogadores;
+        tamanho_tabuleiro = tabuleiro;
+        console.log(qtd_jogadores.value, tamanho_tabuleiro.value)
+    }
+    else {
+        return console.log("valores não selecionados")
+    }
+}
+
+var qtd_jogadores = 0;
+var tamanho_tabuleiro = 0;
