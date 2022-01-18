@@ -10,6 +10,14 @@ card virado atual: #fea215 (laranja)
 
 /* tamanho do icon: 16px pra cada 2x dobra */
 
+.text-lightgray {
+    color: #bcceda;
+}
+
+.text-darkgray {
+    color: #31485a;
+}
+
 /* remover decorações da anchor */
 
 a, a:hover {
@@ -36,7 +44,59 @@ a, a:hover {
     background-color: #bcceda;
 }
 
-/* jogo responsivo */
+/* player responsivo */
+
+@media (min-width: 0px) {
+
+    /* tamanho do icone responsivo */
+    .fa-responsive-size-4x {
+        font-size: 2.5em;
+    }
+
+    /* tamanho do cartão redondo responsivo */
+    .card-round-4x {
+        position: relative;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* tamanho do icone responsivo */
+    .fa-responsive-size-6x {
+        font-size: 1.75em;
+    }
+
+    /* tamanho do cartão redondo responsivo */
+    .card-round-6x {
+        position: relative;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* caixa dos jogadores */
+
+.players-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-container {
+    border-radius: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    color: #31485a;
+    background-color: #bcceda;
+}
+
+.player-container-selected {
+    color: #fcfcfc;
+    background-color: #fea215;
+}
+
+/* tabuleiro responsivo */
 
 @media (min-width: 0px) {
 
@@ -266,27 +326,704 @@ a, a:hover {
     transform: rotateY(180deg);
 }
 
-/* modal começar o jogo */
+/* modal começar o jogo responsivo */
 
-.modal-jogo {
-    display: block;
-    z-index: 1055;
+@media (min-width: 0px) {
+
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 315px;
+        height: 283.5px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+}
+
+@media (min-width: 410px) {
+
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 367.5px;
+        height: 330.75px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.8em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+    
+}
+
+@media (min-width: 576px) {
+
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 490px;
+        height: 441px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 490px;
+        height: 441px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 560px;
+        height: 480px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 600px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+}
+
+@media (min-width: 992px) {
+    
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 560px;
+        height: 504px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 560px;
+        height: 504px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* backdrop do modal */
+    .modal-iniciar {
+        display: block;
+        z-index: 1055;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #31485a;
+    }
+    
+    /* modal dentro do modal */
+    .modal-iniciar-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 630px;
+        border-radius: 20px;
+        border: 1px solid rgb(201, 201, 201);
+        background-color: white;
+    }
+
+    p {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    /* botões de selecionar tipo do jogo */
+    .btn-radiobox {
+        background-color: #bcceda;
+        color: #fcfcfc;
+        width: 20%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .input-radio[type="radio"]:checked+label {
+        background-color: #31485a;
+    }
+
+    /* botão começar */
+    .btn-start {
+        border: none;
+        outline: none;
+        background-color: #fea215;
+        color: #fcfcfc;
+        width: 100%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1.5em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: 0.3s;
+    }
+
+    .btn-start:active {
+        background-color: #cb8211;
+    }
+}
+
+/* animação de fade-in e out para os modais */
+
+.fade-out {
+    -webkit-animation: fade-out 0.3s linear forwards;
+    animation: fade-out 0.3s linear forwards;
+    opacity: 1;
+  }
+  
+  @keyframes fade-out {
+    50% {
+        opacity: 0.5;
+    }
+  
+    100% {
+        opacity: 0;
+    }
+  }
+  
+  .fade-in {
+    -webkit-animation: fade-in 0.3s linear forwards;
+    animation: fade-in 0.3s linear forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fade-in {
+    50% {
+        opacity: 0.5;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+  }
+  
+
+
+
+
+.modal-impedir-click {
+    display: none;
+    z-index: 1056;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(21, 21, 27);
+    background-color: #ffffff77;
 }
 
-.modal-jogo-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 310px;
-    height: 400px;
-    border-radius: 5px;
-    border: 1px solid rgb(201, 201, 201);
-    background-color: white;
+
+@media (hover: hover) and (pointer: fine) {
+
 }

@@ -18,147 +18,91 @@
 </head>
 
 <body>
-    <a id="card_nan" class="card-round-container d-inline-block me-2" type="button" onclick="flipTeste('#card_nan')">
-        <div class="card-round-back card-round-4x" onclick="">
-            <i class="d-none card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-        </div>
-    </a>
+
+    <!--modal que impede cliques quando necessário-->
+    <div id="impedir_click" class="modal-impedir-click"></div>
 
     <!--navbar principal-->
     <nav class="navbar navbar-light">
-        <button type="button" onclick="iniciarTabuleiro(4)">começar</button>
-
 
     </nav>
 
-    <!--modal do jogo-->
-    <div class="modal-jogo">
-        <div class="modal-jogo-content">
+    <!--modal das configurações do jogo-->
+    <div id="modal-iniciar" class="modal-iniciar">
+
+        <div class="modal-iniciar-content p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5">
+            
+            <p style="position: absolute; bottom: 105%; left: calc(50% - 31.5px)" class="text-lightgray text-center">memory</p> 
 
             <form action="" method="POST">
-                <input class="btn-check" type="radio" id="jogadores_1" name="qtd_jogadores" value="1">
-                <label class="btn btn-secondary" for="jogadores_1">1</label>
+                
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tema</p> 
+                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">                   
+                    <input class="input-radio btn-check" type="radio" id="temas_1" name="tema" value="1">
+                    <label style="width: 40%;" class="btn-radiobox" for="temas_1">Números</label>
+    
+                    <input class="input-radio btn-check" type="radio" id="temas_2" name="tema" value="2">
+                    <label style="width: 40%;" class="btn-radiobox" for="temas_2">Icones</label>
+                </div>
 
-                <input class="btn-check" type="radio" id="jogadores_2" name="qtd_jogadores" value="2">
-                <label class="btn btn-secondary" for="jogadores_2">2</label>
 
-                <input class="btn-check" type="radio" id="jogadores_3" name="qtd_jogadores" value="3">
-                <label class="btn btn-secondary" for="jogadores_3">3</label>
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Quantidade de Jogadores</p> 
+                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">                   
+                    <input class="input-radio btn-check" type="radio" id="jogadores_1" name="qtd_jogadores" value="1">
+                    <label class="btn-radiobox" for="jogadores_1">1</label>
+    
+                    <input class="input-radio btn-check" type="radio" id="jogadores_2" name="qtd_jogadores" value="2">
+                    <label class="btn-radiobox" for="jogadores_2">2</label>
+    
+                    <input class="input-radio btn-check" type="radio" id="jogadores_3" name="qtd_jogadores" value="3">
+                    <label class="btn-radiobox" for="jogadores_3">3</label>
+    
+                    <input class="input-radio btn-check" type="radio" id="jogadores_4" name="qtd_jogadores" value="4">
+                    <label class="btn-radiobox" for="jogadores_4">4</label>
+                </div>
 
-                <input class="btn-check" type="radio" id="jogadores_4" name="qtd_jogadores" value="4">
-                <label class="btn btn-secondary" for="jogadores_4">4</label>
+                
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tamanho do Tabuleiro</p> 
+                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">
+                    <input class="input-radio btn-check" type="radio" id="tamanho_1" name="tamanho_tabuleiro" value="4">
+                    <label style="width: 40%;" class="btn-radiobox" for="tamanho_1">4x4</label>
 
-                <br><br>
+                    <input class="input-radio btn-check" type="radio" id="tamanho_2" name="tamanho_tabuleiro" value="6">
+                    <label style="width: 40%;" class="btn-radiobox" for="tamanho_2">6x6</label>
+                </div>
 
-                <input class="btn-check" type="radio" id="tamanho_1" name="tamanho_tabuleiro" value="4">
-                <label class="btn btn-secondary" for="tamanho_1">4x4</label>
+                <div class="text-center">
+                    <button type="button" onclick="definirPreferencias()" class="btn-start">
+                        Jogar
+                    </button>
+                </div>
 
-                <input class="btn-check" type="radio" id="tamanho_2" name="tamanho_tabuleiro" value="6">
-                <label class="btn btn-secondary" for="tamanho_2">6x6</label>
-
-                <br><br>
-
-                <button type="button" onclick="iniciarJogo()" class="btn btn-sm btn-danger btn-remover">
-                    Começar
-                </button>
             </form>
 
         </div>
     </div>
 
-    <!--campo dos cartões-->
+    <!--campo dos cartões e jogadores-->
     <div class="container">
-        <div id="tabuleiro" class="row">
-            <div class="m-2 text-center col-12">
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="m-2 text-center col-12">
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="m-2 text-center col-12">
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="m-2 text-center col-12">
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
-                <a type="button" class="d-inline-block me-2">
-                    <div class="card-round-4x" onclick="">
-                        <i class="card-round-4x-icon fab fa-accessible-icon fa-responsive-size-4x"></i>
-                    </div>
-                </a>
+        <!--cartões-->
+        <div id="tabuleiro" class="row mb-3 mb-sm-4 mb-xl-5">
+        </div>
+
+        <!--jogadores-->
+        <div class="row">
+            <div id="jogadores" class="players-container mb-2 col-12 ps-4 pe-4">
+                <div id="jogador_1" class="player-container p-2 p-sm-3">
+                    <p class="m-0 d-inline-block d-md-none">P1</p>
+                    <p class="m-0 d-none d-md-inline-block">Jogador1</p>
+                    <p class="m-0 ms-2 d-inline-block">0</p>
+                </div>
+
+                
             </div>
         </div>
     </div>
+
+
 
 
 
