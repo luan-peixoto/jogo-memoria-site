@@ -21,6 +21,7 @@ card virado atual: #fea215 (laranja)
 /* remover decorações da anchor */
 
 a, a:hover {
+    cursor: pointer;
     color: inherit;
     text-decoration: none;
     margin: 0px;

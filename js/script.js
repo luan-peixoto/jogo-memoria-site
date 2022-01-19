@@ -80,7 +80,7 @@ function iniciarTabuleiro(tamanho_tabuleiro,) {
             let col = ""
             for (let j = i * tamanho_tabuleiro; j < (tamanho_tabuleiro * (i + 1)); j++) {
 
-                let cartao = `<a id="card_${j}" class="card-round-container ${(vals.includes(j) ? '' : 'ms-2' )} d-inline-block"  type="button" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i style="font-weight: bold;" class="d-none card-round-${tamanho_tabuleiro}x-icon fa-responsive-size-${tamanho_tabuleiro}x">${tabuleiro[j]}</i></div></a>`
+                let cartao = `<a id="card_${j}" class="card-round-container ${(vals.includes(j) ? '' : 'ms-2' )} d-inline-block" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i style="font-weight: bold;" class="d-none card-round-${tamanho_tabuleiro}x-icon fa-responsive-size-${tamanho_tabuleiro}x">${tabuleiro[j]}</i></div></a>`
                 col = col + cartao
             };
             col = `<div class="mb-2 text-center col-12">${col}</div>`
@@ -92,7 +92,7 @@ function iniciarTabuleiro(tamanho_tabuleiro,) {
         for (let i = 0; i < tamanho_tabuleiro; i++) {
             let col = ""
             for (let j = i * tamanho_tabuleiro; j < (tamanho_tabuleiro * (i + 1)); j++) {
-                let cartao = `<a id="card_${j}" class="card-round-container ${(vals.includes(j) ? '' : 'ms-2' )} d-inline-block"  type="button" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i class="d-none card-round-${tamanho_tabuleiro}x-icon ${tabuleiro[j]} fa-responsive-size-${tamanho_tabuleiro}x"></i></div></a>`
+                let cartao = `<a id="card_${j}" class="card-round-container ${(vals.includes(j) ? '' : 'ms-2' )} d-inline-block" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i class="d-none card-round-${tamanho_tabuleiro}x-icon ${tabuleiro[j]} fa-responsive-size-${tamanho_tabuleiro}x"></i></div></a>`
                 col = col + cartao
             };
             col = `<div class="mb-2 text-center col-12">${col}</div>`
@@ -222,7 +222,6 @@ function desativarCartao(id) {
     let anchor = document.querySelector(id);
     let card_round = anchor.firstElementChild;
     anchor.onclick = "";
-    anchor.type = "";
     card_round.classList.remove('card-round-front');
 
 }
