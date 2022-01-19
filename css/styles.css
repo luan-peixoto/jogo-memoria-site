@@ -44,37 +44,6 @@ a, a:hover {
     background-color: #bcceda;
 }
 
-/* player responsivo */
-
-@media (min-width: 0px) {
-
-    /* tamanho do icone responsivo */
-    .fa-responsive-size-4x {
-        font-size: 2.5em;
-    }
-
-    /* tamanho do cartão redondo responsivo */
-    .card-round-4x {
-        position: relative;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-    }
-
-    /* tamanho do icone responsivo */
-    .fa-responsive-size-6x {
-        font-size: 1.70em;
-    }
-
-    /* tamanho do cartão redondo responsivo */
-    .card-round-6x {
-        position: relative;
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-    }
-}
-
 /* caixa dos jogadores */
 
 .players-container {
@@ -107,28 +76,40 @@ a, a:hover {
 
     /* tamanho do icone responsivo */
     .fa-responsive-size-4x {
-        font-size: 2.5em;
+        font-size: 2.25em;
     }
 
     /* tamanho do cartão redondo responsivo */
     .card-round-4x {
         position: relative;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: 54px;
+        height: 54px;
     }
 
     /* tamanho do icone responsivo */
     .fa-responsive-size-6x {
-        font-size: 1.75em;
+        font-size: 1.25em;
     }
 
     /* tamanho do cartão redondo responsivo */
     .card-round-6x {
         position: relative;
         border-radius: 50%;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* padding e display da navbar no xs */
+@media (max-width: 409px) {
+    .pse-xs {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .display-xs {
+        display: block;
     }
 }
 
@@ -1023,7 +1004,7 @@ a, a:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff00;
+    background-color: #ffffff77;
 }
 
 /* mudando cores basicas dos botões */
@@ -1057,7 +1038,7 @@ a, a:hover {
 
 .modal-fim {
     border-top: 1px solid #94a4af;
-    border-bottom: 1px solid #94a4af;;
+    border-bottom: 1px solid #94a4af;
     border-radius: 0;
     width: 100vw;
 }

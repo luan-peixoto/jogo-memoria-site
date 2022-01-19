@@ -67,12 +67,20 @@ function iniciarTabuleiro(tamanho_tabuleiro,) {
     let div = ""
     // cria a div que vai começar o jogo
 
+    let val = (tamanho_tabuleiro * tamanho_tabuleiro) - tamanho_tabuleiro
+    let vals = []
+    while (val > -1) {
+        vals.push(val)
+        val = val - tamanho_tabuleiro
+    };
+    // concertar a margem
 
     if (parseInt(tema_atual) == 1) {
         for (let i = 0; i < tamanho_tabuleiro; i++) {
             let col = ""
             for (let j = i * tamanho_tabuleiro; j < (tamanho_tabuleiro * (i + 1)); j++) {
-                let cartao = `<a id="card_${j}" class="card-round-container ms-2 d-inline-block"  type="button" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i style="font-weight: bold;" class="d-none card-round-${tamanho_tabuleiro}x-icon fa-responsive-size-${tamanho_tabuleiro}x">${tabuleiro[j]}</i></div></a>`
+
+                let cartao = `<a id="card_${j}" class="card-round-container ${(vals.includes(j) ? '' : 'ms-2' )} d-inline-block"  type="button" onclick="proximoRound('#card_${j}')"><div class="card-round-back card-round-${tamanho_tabuleiro}x" onclick=""><i style="font-weight: bold;" class="d-none card-round-${tamanho_tabuleiro}x-icon fa-responsive-size-${tamanho_tabuleiro}x">${tabuleiro[j]}</i></div></a>`
                 col = col + cartao
             };
             col = `<div class="mb-2 text-center col-12">${col}</div>`
