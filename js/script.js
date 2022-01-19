@@ -16,8 +16,10 @@ function embaralharCartoes(array) {
     return array;
 };
 
-function temNumerosIguais(array) {
-    return (new Set(array)).size !== array.length;
+function contarOcorrencias(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
 }
 
 var icons = [
@@ -280,7 +282,7 @@ function proximoRound(id) {
                         maior = Math.max(...resultado)
                         // recupera o maior valor do array
 
-                        if (temNumerosIguais(resultado)) {
+                        if (contarOcorrencias(resultado, maior) > 1) {
                             // se deu empate
                             let vencedor_div = document.getElementById('vencedor')
                             vencedor_div.innerHTML = ('EMPATE');

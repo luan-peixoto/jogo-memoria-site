@@ -71,37 +71,6 @@ a, a:hover {
     pointer-events: none;
 }
 
-/* tabuleiro responsivo */
-
-@media (min-width: 0px) {
-
-    /* tamanho do icone responsivo */
-    .fa-responsive-size-4x {
-        font-size: 2.25em;
-    }
-
-    /* tamanho do cartão redondo responsivo */
-    .card-round-4x {
-        position: relative;
-        border-radius: 50%;
-        width: 54px;
-        height: 54px;
-    }
-
-    /* tamanho do icone responsivo */
-    .fa-responsive-size-6x {
-        font-size: 1.25em;
-    }
-
-    /* tamanho do cartão redondo responsivo */
-    .card-round-6x {
-        position: relative;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-    }
-}
-
 /* padding e display da navbar no xs */
 @media (max-width: 409px) {
     .pse-xs {
@@ -114,19 +83,50 @@ a, a:hover {
     }
 }
 
-@media (min-width: 410px) {
+/* tabuleiro responsivo */
+
+@media (min-width: 0px) {
 
     /* tamanho do icone responsivo */
     .fa-responsive-size-4x {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     /* tamanho do cartão redondo responsivo */
     .card-round-4x {
         position: relative;
         border-radius: 50%;
-        width: 72px;
-        height: 72px;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* tamanho do icone responsivo */
+    .fa-responsive-size-6x {
+        font-size: 1.5em;
+    }
+
+    /* tamanho do cartão redondo responsivo */
+    .card-round-6x {
+        position: relative;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (min-width: 410px) {
+
+    /* tamanho do icone responsivo */
+    .fa-responsive-size-4x {
+        font-size: 3.5em;
+    }
+
+    /* tamanho do cartão redondo responsivo */
+    .card-round-4x {
+        position: relative;
+        border-radius: 50%;
+        width: 84px;
+        height: 84px;
     }
 
     /* tamanho do icone responsivo */
@@ -138,8 +138,8 @@ a, a:hover {
     .card-round-6x {
         position: relative;
         border-radius: 50%;
-        width: 48px;
-        height: 48px;
+        width: 54px;
+        height: 54px;
     }
 }
 
