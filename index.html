@@ -19,50 +19,68 @@
 
 <body>
 
-    <!--modal que impede cliques quando necessário-->
-    <div id="impedir_click" class="modal-impedir-click"></div>
-
     <!--navbar principal-->
-    <nav class="navbar navbar-light">
+    <nav class="p-3 ps-5 pe-5 navbar navbar-light">
+        <span style="font-size: 1.2em;" class="pb-1">
+            <p class="text-darkgray m-0">memory</p>
+        </span>
+        <span class="m-0">
+            <button class="btn-custom btn-restart d-inline-block me-3" style="width: calc(60px + 10vw)" type="button"
+                onclick="reiniciarJogo()">
+                Reiniciar
+            </button>
+            <button class="btn-custom btn-playagain d-inline-block" style="width: calc(60px + 10vw)" type="button"
+                onclick="redefinirPreferencias()">
+                Novo Jogo
+            </button>
+        </span>
 
     </nav>
 
+    <!--modal que impede cliques quando necessário-->
+    <div id="impedir_click" class="modal-impedir-click">
+
+    </div>
+
+
+
     <!--modal das configurações do jogo-->
-    <div id="modal-iniciar" class="modal-iniciar">
+    <div id="modal_iniciar" class="modal-iniciar">
 
         <div class="modal-iniciar-content p-4 p-sm-5 p-md-5 p-lg-5 p-xl-5">
-            
-            <p style="position: absolute; bottom: 105%; left: calc(50% - 31.5px)" class="text-lightgray text-center">memory</p> 
+
+            <p style="position: absolute; bottom: 105%; left: calc(50% - 31.5px)" class="text-lightgray text-center">
+                memory</p>
 
             <form action="" method="POST">
-                
-                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tema</p> 
-                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">                   
+
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tema</p>
+                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">
                     <input class="input-radio btn-check" type="radio" id="temas_1" name="tema" value="1">
                     <label style="width: 40%;" class="btn-radiobox" for="temas_1">Números</label>
-    
+
                     <input class="input-radio btn-check" type="radio" id="temas_2" name="tema" value="2">
                     <label style="width: 40%;" class="btn-radiobox" for="temas_2">Icones</label>
                 </div>
 
 
-                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Quantidade de Jogadores</p> 
-                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">                   
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Quantidade de Jogadores</p>
+                <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">
                     <input class="input-radio btn-check" type="radio" id="jogadores_1" name="qtd_jogadores" value="1">
                     <label class="btn-radiobox" for="jogadores_1">1</label>
-    
+
                     <input class="input-radio btn-check" type="radio" id="jogadores_2" name="qtd_jogadores" value="2">
                     <label class="btn-radiobox" for="jogadores_2">2</label>
-    
+
                     <input class="input-radio btn-check" type="radio" id="jogadores_3" name="qtd_jogadores" value="3">
                     <label class="btn-radiobox" for="jogadores_3">3</label>
-    
+
                     <input class="input-radio btn-check" type="radio" id="jogadores_4" name="qtd_jogadores" value="4">
                     <label class="btn-radiobox" for="jogadores_4">4</label>
                 </div>
 
-                
-                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tamanho do Tabuleiro</p> 
+
+                <p class="mb-2 mb-sm-4 text-darkgray">Selecionar Tamanho do Tabuleiro</p>
                 <div class="mb-3 mb-sm-3 mb-md-3 mb-lg-4 mb-xl-4 mb-xxl-5 text-center">
                     <input class="input-radio btn-check" type="radio" id="tamanho_1" name="tamanho_tabuleiro" value="4">
                     <label style="width: 40%;" class="btn-radiobox" for="tamanho_1">4x4</label>
@@ -72,7 +90,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="button" onclick="definirPreferencias()" class="btn-start">
+                    <button type="button" onclick="novoJogo()" class="btn-custom btn-start">
                         Jogar
                     </button>
                 </div>
@@ -85,7 +103,7 @@
     <!--campo dos cartões e jogadores-->
     <div class="container">
         <!--cartões-->
-        <div id="tabuleiro" class="row mb-3 mb-sm-4 mb-xl-5">
+        <div id="tabuleiro" class="row mb-3 mb-sm-4 mb-xl-3 mb-xll-5">
         </div>
 
         <!--jogadores-->
@@ -97,11 +115,39 @@
                     <p class="m-0 ms-2 d-inline-block">0</p>
                 </div>
 
-                
+
             </div>
         </div>
     </div>
 
+    <!--campo de fim de jogo-->
+    <div style="display: none;" id="modal_vencedor" class="modal-impedir-click">
+        <div class="modal-iniciar-content modal-fim d-flex justify-content-center p-5">
+
+            <div class="modal-fim-content text-center" style="width: 80vw;">
+                <div class="mb-5">
+                    <span style="font-size: 1.8em;">
+                        <p class="text-darkgray m-0">VENCEDOR</p>
+                    </span>
+                    <span style="font-size: 1.8em;">
+                        <p id="vencedor" class="text-darkgray m-0">NOME</p>
+                    </span>
+                </div>
+
+                <div>
+                    <button class="btn-custom btn-restart d-inline-block mb-2" style="width: calc(100px + 10vw)"
+                        type="button" onclick="reiniciarJogo()">
+                        Reiniciar
+                    </button>
+                    <button class="btn-custom btn-playagain d-inline-block" style="width: calc(100px + 10vw)"
+                        type="button" onclick="redefinirPreferencias()">
+                        Novo Jogo
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 

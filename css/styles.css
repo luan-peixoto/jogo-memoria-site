@@ -96,6 +96,11 @@ a, a:hover {
     background-color: #fea215;
 }
 
+/* fazer o anchor não ser clicável */
+.unclickable {
+    pointer-events: none;
+}
+
 /* tabuleiro responsivo */
 
 @media (min-width: 0px) {
@@ -379,7 +384,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -394,7 +399,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -451,7 +456,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -466,7 +471,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -524,7 +529,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -539,7 +544,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -596,7 +601,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -611,7 +616,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -668,7 +673,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -683,7 +688,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 }
@@ -739,7 +744,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -754,7 +759,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -811,7 +816,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -826,7 +831,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 
@@ -883,7 +888,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -898,7 +903,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 }
@@ -954,7 +959,7 @@ a, a:hover {
     }
 
     /* botão começar */
-    .btn-start {
+    .btn-custom {
         border: none;
         outline: none;
         background-color: #fea215;
@@ -969,7 +974,7 @@ a, a:hover {
         transition: 0.3s;
     }
 
-    .btn-start:active {
+    .btn-custom:active {
         background-color: #cb8211;
     }
 }
@@ -1007,10 +1012,8 @@ a, a:hover {
         opacity: 1;
     }
   }
-  
 
-
-
+/* modal que impede clique na tela */
 
 .modal-impedir-click {
     display: none;
@@ -1023,6 +1026,48 @@ a, a:hover {
     background-color: #ffffff77;
 }
 
+/* mudando cores basicas dos botões */
+
+.btn-custom {
+    background-color: #fea215;
+    color: #fcfcfc;
+}
+
+.btn-custom:active {
+    background-color: #cb8211;
+}
+
+.btn-restart {
+    background-color: #fea215;
+    color: #fcfcfc;
+}
+
+.btn-restart:active {
+    background-color: #cb8211;
+}
+
+.btn-playagain {
+    background-color: #bcceda;
+    color: #31485a;
+}
+
+.btn-playagain:active {
+    background-color: #94a4af;
+}
+
+.modal-fim {
+    border-top: 1px solid #94a4af;
+    border-bottom: 1px solid #94a4af;;
+    border-radius: 0;
+    width: 100vw;
+}
+
+.modal-fim-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @media (hover: hover) and (pointer: fine) {
 
