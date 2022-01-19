@@ -63,7 +63,7 @@ a, a:hover {
 
     /* tamanho do icone responsivo */
     .fa-responsive-size-6x {
-        font-size: 1.75em;
+        font-size: 1.70em;
     }
 
     /* tamanho do cartão redondo responsivo */
@@ -1023,7 +1023,7 @@ a, a:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff77;
+    background-color: #ffffff00;
 }
 
 /* mudando cores basicas dos botões */
