@@ -215,7 +215,7 @@ function virarCartao(id) {
 
             anchor.classList.toggle('card-round-flip');
             // gira mais 180 graus
-        }, 500);
+        }, 250);
 }
 
 function desativarCartao(id) {
@@ -341,12 +341,12 @@ function proximoRound(id) {
                     cartoes_virados_id = [];
                     qtd_cartoes_virados_atual = 0;
                     // limpa os dois campos acima
-                }, 1300)
-                // espera os dois cartões serem desvirados (1s) + 0.5s para passar a vez do jogador
+                }, 800)
+                // espera os dois cartões serem desvirados (0.5s) + 0.3s para passar a vez do jogador
 
             }
-        }, 1300)
-        // esperar o cartão ser virado (1s) + meio segundo para fazer a comparação
+        }, 800)
+        // esperar o cartão ser virado (0.3s) + 0.3s para fazer a comparação
 
     }
 

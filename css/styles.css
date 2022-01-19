@@ -296,7 +296,7 @@ a, a:hover {
 
 .card-round-container {
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 0.5s;
     backface-visibility: hidden;
 }
 
@@ -1004,7 +1004,6 @@ a, a:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff77;
 }
 
 /* mudando cores basicas dos botões */
